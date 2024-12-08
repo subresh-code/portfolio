@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #1a1a1a; /* Dark gray background */
+  font-family: "Roboto", sans-serif; /* Example font */
+  font-weight: 400; /* Normal font weight */
+}
+
+.primary-color {
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient from orange to light orange */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.bg-primary-color {
+  background-image: linear-gradient(to right, #05668d, #028090); /* Gradient from dark blue to teal */
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Your other styles here */
+
+/* Your other styles here */
+
+/* Your other styles here */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradientAnimation 10s linear infinite alternate;
+}
