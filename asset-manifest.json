@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.8eeab5ed.css",
-    "main.js": "/portfolio/static/js/main.f9acc901.js",
-    "static/media/proj2.png": "/portfolio/static/media/proj2.959c193322337e937d0e.png",
-    "static/media/proj1.png": "/portfolio/static/media/proj1.1579c10f04889d5231c9.png",
-    "static/media/proj3.png": "/portfolio/static/media/proj3.db352896214a355692d7.png",
-    "static/media/proj4.png": "/portfolio/static/media/proj4.bf294fe6a0ef0d657429.png",
-    "static/media/subrace.png": "/portfolio/static/media/subrace.2a5271eccc5920da63f0.png",
-    "static/media/github.png": "/portfolio/static/media/github.c2c1684c95ee51ed6e44.png",
-    "static/media/logo.png": "/portfolio/static/media/logo.30a3dd97e781057a943f.png",
-    "static/media/google.png": "/portfolio/static/media/google.3b44a32b77f4074c1956.png",
-    "static/media/html.png": "/portfolio/static/media/html.2ba4fabc69a89a8f71e6.png",
-    "static/media/tailwind.png": "/portfolio/static/media/tailwind.e47ac876b8d4d0bba47a.png",
-    "static/media/css.png": "/portfolio/static/media/css.69a82c2d9e45c933a9cb.png",
-    "static/media/Intuji.svg": "/portfolio/static/media/Intuji.64a52493fdb580ecf182a5a658ffd897.svg",
-    "static/media/reactjs.svg": "/portfolio/static/media/reactjs.e72c9ed5483656b44c338310ad3219ce.svg",
-    "static/media/php.web": "/portfolio/static/media/php.16ef2bf31fde505109f8.web",
-    "static/media/python.svg": "/portfolio/static/media/python.3d8ed41432d2edaf850964b1055db196.svg",
-    "static/media/javascript.svg": "/portfolio/static/media/javascript.0866c81b3b841c647e23b8a5d991c312.svg",
-    "index.html": "/portfolio/index.html",
-    "main.8eeab5ed.css.map": "/portfolio/static/css/main.8eeab5ed.css.map",
-    "main.f9acc901.js.map": "/portfolio/static/js/main.f9acc901.js.map"
+    "main.css": "/portfolio/Portfolio-main/static/css/main.8eeab5ed.css",
+    "main.js": "/portfolio/Portfolio-main/static/js/main.8dfab3dc.js",
+    "static/media/proj2.png": "/portfolio/Portfolio-main/static/media/proj2.959c193322337e937d0e.png",
+    "static/media/proj1.png": "/portfolio/Portfolio-main/static/media/proj1.1579c10f04889d5231c9.png",
+    "static/media/proj3.png": "/portfolio/Portfolio-main/static/media/proj3.db352896214a355692d7.png",
+    "static/media/proj4.png": "/portfolio/Portfolio-main/static/media/proj4.bf294fe6a0ef0d657429.png",
+    "static/media/subrace.png": "/portfolio/Portfolio-main/static/media/subrace.2a5271eccc5920da63f0.png",
+    "static/media/github.png": "/portfolio/Portfolio-main/static/media/github.c2c1684c95ee51ed6e44.png",
+    "static/media/logo.png": "/portfolio/Portfolio-main/static/media/logo.30a3dd97e781057a943f.png",
+    "static/media/google.png": "/portfolio/Portfolio-main/static/media/google.3b44a32b77f4074c1956.png",
+    "static/media/html.png": "/portfolio/Portfolio-main/static/media/html.2ba4fabc69a89a8f71e6.png",
+    "static/media/tailwind.png": "/portfolio/Portfolio-main/static/media/tailwind.e47ac876b8d4d0bba47a.png",
+    "static/media/css.png": "/portfolio/Portfolio-main/static/media/css.69a82c2d9e45c933a9cb.png",
+    "static/media/Intuji.svg": "/portfolio/Portfolio-main/static/media/Intuji.64a52493fdb580ecf182a5a658ffd897.svg",
+    "static/media/reactjs.svg": "/portfolio/Portfolio-main/static/media/reactjs.e72c9ed5483656b44c338310ad3219ce.svg",
+    "static/media/php.web": "/portfolio/Portfolio-main/static/media/php.16ef2bf31fde505109f8.web",
+    "static/media/python.svg": "/portfolio/Portfolio-main/static/media/python.3d8ed41432d2edaf850964b1055db196.svg",
+    "static/media/javascript.svg": "/portfolio/Portfolio-main/static/media/javascript.0866c81b3b841c647e23b8a5d991c312.svg",
+    "index.html": "/portfolio/Portfolio-main/index.html",
+    "main.8eeab5ed.css.map": "/portfolio/Portfolio-main/static/css/main.8eeab5ed.css.map",
+    "main.8dfab3dc.js.map": "/portfolio/Portfolio-main/static/js/main.8dfab3dc.js.map"
   },
   "entrypoints": [
     "static/css/main.8eeab5ed.css",
-    "static/js/main.f9acc901.js"
+    "static/js/main.8dfab3dc.js"
   ]
 }
