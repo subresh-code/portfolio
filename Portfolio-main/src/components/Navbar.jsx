@@ -1,58 +1,73 @@
-import React, {useState} from 'react'
-import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { motion } from "framer-motion";
 
-const Navbar = () => {
-    const [nav, setNav] = useState(false)
+const Navbar = ({ darkMode, activeSection, setActiveSection }) => {
+  const navItems = [
+    { name: "Home", section: "home" },
+    { name: "About", section: "about" },
+    { name: "Skills", section: "skills" },
+    { name: "Work", section: "work" },
+    { name: "Experience", section: "experience" },
+    { name: "Contact", section: "contact" },
+  ];
 
-    const handleNav = () =>{
-        setNav(!nav)
+  const handleScroll = (section) => {
+    const element = document.getElementById(section);
+    if (element) {
+      const navbarHeight = 80; // Adjust based on your Navbar height
+      const offset = element.offsetTop - navbarHeight;
+      window.scrollTo({ top: offset, behavior: "smooth" });
+      setActiveSection(section);
     }
-    const handleScroll = (id) => {
-      setTimeout(() => {
-          const item = document.getElementById(id);
-          if (item) {
-              window.scrollTo({
-                  top: item.offsetTop - 60,
-                  behavior: "auto"
-              });
-          }
-      }, 100); // 1000 milliseconds = 1 second
   };
-  
 
   return (
-    <div className='z-10 text-gray-500 flex  justify-between items-center max-w-[1240px] mx-auto h-24 px-4 text-1'>
-
-        <h1 className='text-3xl font-bold primary-color ml-4'>Subrace</h1>
-        <ul className='hidden md:flex'>
-        <Link onClick={()=>{handleScroll('home'); }} to="/" className="p-5">Home</Link>
-        <Link onClick={()=>{handleScroll('about'); }} to="/" className="p-5">About</Link>
-        <Link onClick={()=>{handleScroll('work'); }} to="/" className="p-5">Work</Link>
-        <Link onClick={()=>{handleScroll('experience'); }} to="/" className="p-5">Experience</Link>
-        <Link to="/contact" className="p-5">Contact</Link>
+    <motion.nav
+      className={`fixed top-0 left-0 w-full z-40 py-4 sm:py-6 ${
+        darkMode ? "bg-[#20242d] text-white" : "bg-white text-gray-800"
+      } shadow-lg`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <h1 className="text-xl sm:text-2xl font-bold text-blue-500">
+          Subresh Thakulla
+        </h1>
+        <ul className="flex space-x-4 sm:space-x-6">
+          {navItems.map((item) => (
+            <li key={item.section}>
+              <motion.button
+                onClick={() => handleScroll(item.section)}
+                className={`text-sm sm:text-base font-medium relative transition-colors duration-300 ${
+                  activeSection === item.section
+                    ? "text-blue-500"
+                    : darkMode
+                    ? "text-gray-300 hover:text-blue-400"
+                    : "text-gray-600 hover:text-blue-600"
+                }`}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label={`Scroll to ${item.name} section`}
+                aria-current={activeSection === item.section ? "page" : undefined}
+              >
+                {item.name}
+                {activeSection === item.section && (
+                  <motion.div
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500"
+                    layoutVary
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </motion.button>
+            </li>
+          ))}
         </ul>
-      
-      <div onClick={handleNav} className='block fixed mx-[-16px] right-10 z-50 md:hidden /*z-10*/'>
-        {nav ? <AiOutlineClose size= {20}/> : <AiOutlineMenu size={20}/>}
       </div>
+    </motion.nav>
+  );
+};
 
-
-        <div className={nav ?  'z-10 text-gray-300 fixed h-full left-0 top-0 w-[60%] border-r border-r-gray-900 bg-[#202121] ease-in-out duration-500'
-                                    : "fixed left-[-100%]"}>
-            
-        <h1 className='text-3xl font-bold primary-color m-4'>Subrace</h1>
-        <ul className='p-8 text-2xl flex z-50 flex-col'>
-
-        <Link onClick={()=>{handleScroll('home'); setNav(!nav)}} to="/" className="p-5">Home</Link>
-        <Link onClick={()=>{handleScroll('about'); setNav(!nav)}} to="/" className="p-5">About</Link>
-        <Link onClick={()=>{handleScroll('work'); setNav(!nav)}} to="/" className="p-5">Work</Link>
-        <Link onClick={()=>{handleScroll('experience'); setNav(!nav)}} to="/" className="p-5">Experience</Link>
-        <Link to="/contact" className="p-5">Contact</Link>
-        </ul>
-        </div>
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;

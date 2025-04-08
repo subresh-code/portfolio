@@ -1,154 +1,126 @@
-// import React from 'react';
-// import { skills, softskills } from "../data"; // Corrected import path
-// import { BsCheck2All } from "react-icons/bs";
+import React from "react";
+import { motion } from "framer-motion";
+import css from "../assets/css.png";
+import github from "../assets/github.png";
+import html from "../assets/html.png";
+import php from "../assets/php.web";
+import javascript from "../assets/javascript.svg";
+import python from "../assets/python.svg";
+import reactImage from "../assets/reactjs.svg";
+import tailwind from "../assets/tailwind.png";
 
-// const Skills = () => {
-//   return (
-//     <div className='w-full flex flex-col py-20 overflow-y-auto max-h-[calc(100vh - 200px)]'>
-//       <h4 className='text-3xl font-bold text-black dark:text-white mb-10 text-center'>
-//       I Develop Skills Regularly
-//       </h4>
-
-//       <div className='w-full flex flex-wrap gap-10 items-center justify-center'>
-//         {skills.map((skill, index) => (
-//           <div
-//             data-aos='zoom-in-down'
-//             data-aos-offset='200'
-//             data-aos-delay='50'
-//             data-aos-duration='1000'
-//             data-aos-easing='ease-in-out'
-//             key={index}
-//             className='flex gap-4 shadow-lg py-2 px-6 bg-[#04133e] rounded-full items-center hover:animate-bounce ease-in-out duration-300'
-//           >
-//             <div className='w-10 h-10'>
-//               <img src={skill.icon} className='w-full h-full rounded-full' alt={`${skill.name} icon`} />
-//             </div>
-//             <div className='flex flex-col gap-1'>
-//               <div className='flex items-center justify-between'>
-//                 <p className='text-md font-semibold text-white '>
-//                   {skill.name}
-//                 </p>
-//                 <p className='text-md font-semibold text-white'>
-//                   {skill.value + "%"}
-//                 </p>
-//               </div>
-//               <div className='w-[200px] h-[10px] bg-slate-800 rounded-lg mb-1'>
-//                 <div
-//                   className='bg-neutral-300 h-full'
-//                   style={{ width: skill.value + "%" }}
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-
-//       <div className='mt-[10rem]'>
-//         <h4 className='text-3xl font-bold text-black dark:text-white mb-14 text-center'>
-//          My Soft Skills
-//         </h4>
-
-//         <div className='flex flex-col md:flex-row gap-16 items-center justify-center'>
-//           <div className='flex flex-col bg-[#000000] dark:bg-[#224cff10] p-6 rounded-xl shadow-xl hover:scale-125 ease-in-out duration-500 mb-10 md:mb-0'>
-//             {softskills.slice(0, 5).map((s, index) => (
-//               <div key={index + s} className='flex items-center gap-3 p-4'>
-//                 <BsCheck2All color='white' size={22} />
-//                 <p className='text-white'>{s}</p>
-//               </div>
-//             ))}
-//           </div>
-
-//           <div className='flex flex-col bg-[#000000] dark:bg-[#224cff10] p-6 rounded-xl shadow-xl scale-110 hover:scale-125 ease-in-out duration-500 mb-10 md:mb-0'>
-//             {softskills.slice(5, 10).map((s, index) => (
-//               <div key={index + s} className='flex items-center gap-3 p-4'>
-//                 <BsCheck2All color='white' size={22} />
-//                 <p className='text-white'>{s}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Skills;
-
-
-import React from 'react';
-import css from '../assets/css.png';
-import github from '../assets/google.png';
-import html from '../assets/html.png';
-import javascript from '../assets/javascript.svg';
-import python from '../assets/python.svg';
-import reactImage from '../assets/reactjs.svg';
-import tailwind from '../assets/tailwind.png';
-
-const Skills = () => {
+const Skills = ({ darkMode }) => { // Add darkMode prop
   const techs = [
-    {
-      id: 1,
-      src: html,
-      title: 'HTML',
-      style: 'shadow-orange-500'
-    },
-    {
-      id: 2,
-      src: css,
-      title: 'CSS',
-      style: 'shadow-blue-500'
-    },
-    {
-      id: 3,
-      src: javascript,
-      title: 'JavaScript',
-      style: 'shadow-yellow-500'
-    },
-    {
-      id: 4,
-      src: reactImage,
-      title: 'React',
-      style: 'shadow-blue-600'
-    },
-    {
-      id: 5,
-      src: tailwind,
-      title: 'Tailwind',
-      style: 'shadow-sky-400'
-    },
-    {
-      id: 6,
-      src: github,
-      title: 'GitHub',
-      style: 'shadow-gray-500'
-    },
-    {
-      id: 7,
-      src: python,
-      title: 'Python',
-      style: 'shadow-yellow-500'
-    }
+    { id: 1, src: html, title: "HTML", style: "shadow-orange-500", proficiency: 90 },
+    { id: 2, src: css, title: "CSS", style: "shadow-blue-500", proficiency: 85 },
+    { id: 3, src: javascript, title: "JavaScript", style: "shadow-yellow-500", proficiency: 80 },
+    { id: 4, src: reactImage, title: "React", style: "shadow-blue-600", proficiency: 75 },
+    { id: 5, src: tailwind, title: "Tailwind", style: "shadow-sky-400", proficiency: 70 },
+    { id: 6, src: github, title: "GitHub", style: "shadow-gray-400", proficiency: 85 },
+    { id: 7, src: python, title: "Python", style: "shadow-green-500", proficiency: 90 },
+    { id: 8, src: php, title: "PHP", style: "shadow-purple-500", proficiency: 65 },
   ];
 
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, staggerChildren: 0.1 } },
+  };
+
+  const headingVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+    hover: { scale: 1.05, rotateX: 5, rotateY: 5, boxShadow: "0 8px 20px rgba(0,0,0,0.3)" },
+  };
+
+  const progressVariants = {
+    hidden: { width: 0 },
+    visible: (proficiency) => ({
+      width: `${proficiency}%`,
+      transition: { duration: 1, ease: "easeOut" },
+    }),
+  };
+
   return (
-    <div id='experience' name='experience' className='bg-black w-full h-screen text-white'>
-      <div className='max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white'>
-        <div>
-          <p className='text-4xl font-bold border-b-4 border-gray-500 p-2 inline'>Experience</p>
-          <p className='py-6'>These are the technologies I've worked with</p>
-        </div>
-
-        <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-15 text-center py-8 px-12 sm:px-0'>
-          {techs.map(({ id, src, title, style }) => (
-            <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
-              <img src={src} alt='' className='w-20 mx-auto' />
-              <p className='mt-4'>{title}</p>
-            </div>
-          ))}
-        </div>
+    <motion.section
+      id="skills"
+      className={`py-16 pt-28 sm:pt-32 relative overflow-hidden ${
+        darkMode
+          ? "bg-gradient-to-b from-gray-900 to-black text-white"
+          : "bg-gradient-to-b from-gray-100 to-white text-gray-900"
+      }`}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={sectionVariants}
+    >
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="w-full h-full bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
       </div>
-    </div>
 
+      <div className="max-w-[1200px] mx-auto px-4 flex flex-col justify-center w-full relative z-10">
+        <motion.div variants={sectionVariants}>
+          <motion.h2
+            className={`text-3xl sm:text-4xl font-extrabold border-b-4 border-blue-500 inline-block pb-2 ${
+              darkMode ? "text-white" : "text-gray-900"
+            }`}
+            variants={headingVariants}
+          >
+            Skills
+          </motion.h2>
+          <p className={`py-6 text-lg sm:text-xl ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+            Technologies I specialize in, with proficiency levels
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="w-full grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 text-center py-8 px-4 sm:px-0"
+          variants={sectionVariants}
+        >
+          {techs.map(({ id, src, title, style, proficiency }) => (
+            <motion.div
+              key={id}
+              className={`relative rounded-lg py-4 px-6 ${style} shadow-lg transition-colors duration-300 ${
+                darkMode
+                  ? "bg-gray-800/70 backdrop-blur-md border border-gray-700/50 hover:border-blue-500/50"
+                  : "bg-white/70 border border-gray-200 hover:border-blue-500/30"
+              }`}
+              variants={cardVariants}
+              whileHover="hover"
+              transition={{ duration: 0.3 }}
+              role="figure"
+              aria-label={`${title} skill with ${proficiency}% proficiency`}
+            >
+              <motion.img
+                src={src}
+                alt={`${title} logo`}
+                className="w-14 sm:w-16 mx-auto"
+                whileHover={{ rotate: 360, transition: { duration: 0.8 } }}
+              />
+              <p className={`mt-3 text-base sm:text-lg font-semibold ${darkMode ? "text-white" : "text-gray-900"}`}>
+                {title}
+              </p>
+              <div className={`mt-2 w-full rounded-full h-2 ${darkMode ? "bg-gray-600" : "bg-gray-300"}`}>
+                <motion.div
+                  className="bg-blue-500 h-2 rounded-full"
+                  initial="hidden"
+                  animate="visible"
+                  variants={progressVariants}
+                  custom={proficiency}
+                />
+              </div>
+              <p className={`mt-1 text-sm ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+                {proficiency}%
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </motion.section>
   );
 };
 

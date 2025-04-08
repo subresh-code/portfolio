@@ -1,100 +1,43 @@
-import React from 'react';
-import aboutImg from "../assets/about4.jpeg";
+import React from "react";
+import { motion } from "framer-motion";
 
-const About = () => {
+const About = ({ darkMode }) => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const headingVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
+  };
+
   return (
-    <div className='py-10 text-white bg-[#232325] h-auto' id='about'>
-      <div className='flex lg:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-auto'>
-
-        <div>
-          <div className='w-full h-full'>
-            <img src={aboutImg} alt=''
-              className='object-cover rounded-xl h-full w-full filter grayscale brightness-50 hover:brightness-100 transition duration-300' />
-          </div>
-        </div>
-
-        <div>
-          <div className='p-2'>
-            <div className='text-gray-300 my-3'>
-              <h3 className='text-4xl font-semibold mb-5'>About <span>Me</span></h3>
-              <p className='text-justify leading-7 w-11/12 mx-auto'>
-                Hello! I'm a data analyst focused on Exploratory data analysis (EDA). Currently, my expertise lies in Data Cleaning, where I have experience in data Engineering applications utilizing Numpy,Pandas and Matplotlib.
-              </p>
-            </div>
-          </div>
-
-          <div className='flex mt-10 gap-7 justify-center items-center'>
-
-
-
-
-            <div
-              class="hover:-translate-y-2 group  duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
-            >
-              <svg
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/20"
-                class="absolute blur z-10 fill-red-300 duration-500 group-hover:blur-none group-hover:scale-105"
-              >
-                <path
-                  transform="translate(100 100)"
-                  d="M39.5,-49.6C54.8,-43.2,73.2,-36.5,78.2,-24.6C83.2,-12.7,74.8,4.4,69,22.5C63.3,40.6,60.2,59.6,49.1,64.8C38.1,70,19,61.5,0.6,60.7C-17.9,59.9,-35.9,67,-47.2,61.9C-58.6,56.7,-63.4,39.5,-70,22.1C-76.6,4.7,-84.9,-12.8,-81.9,-28.1C-79,-43.3,-64.6,-56.3,-49.1,-62.5C-33.6,-68.8,-16.8,-68.3,-2.3,-65.1C12.1,-61.9,24.2,-55.9,39.5,-49.6Z"
-                ></path>
-              </svg>
-
-              <div class="z-20 flex flex-col justify-center items-center">
-                <span class="font-bold text-6xl ml-2">11+</span>
-                <p class="font-bold">Projects</p>
-              </div>
-            </div>
-
-            <div
-              class="hover:-translate-y-2 group  duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
-            >
-              <svg
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute blur z-10 fill-red-300 duration-500 group-hover:blur-none group-hover:scale-105"
-              >
-                <path
-                  transform="translate(100 100)"
-                  d="M39.5,-49.6C54.8,-43.2,73.2,-36.5,78.2,-24.6C83.2,-12.7,74.8,4.4,69,22.5C63.3,40.6,60.2,59.6,49.1,64.8C38.1,70,19,61.5,0.6,60.7C-17.9,59.9,-35.9,67,-47.2,61.9C-58.6,56.7,-63.4,39.5,-70,22.1C-76.6,4.7,-84.9,-12.8,-81.9,-28.1C-79,-43.3,-64.6,-56.3,-49.1,-62.5C-33.6,-68.8,-16.8,-68.3,-2.3,-65.1C12.1,-61.9,24.2,-55.9,39.5,-49.6Z"
-                ></path>
-              </svg>
-
-              <div class="z-20 flex flex-col justify-center items-center">
-                <span class="font-bold text-6xl ml-2">5+</span>
-                <p class="font-bold">years of <br /> Experience</p>
-              </div>
-            </div>
-
-            <div
-              class="hover:-translate-y-2 group duration-500 w-44 h-44 flex text-neutral-600 flex-col justify-center items-center relative rounded-xl overflow-hidden shadow-md"
-            >
-              <svg
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute blur z-10 fill-red-300 duration-500 group-hover:blur-none group-hover:scale-105"
-              >
-                <path
-                  transform="translate(100 100)"
-                  d="M39.5,-49.6C54.8,-43.2,73.2,-36.5,78.2,-24.6C83.2,-12.7,74.8,4.4,69,22.5C63.3,40.6,60.2,59.6,49.1,64.8C38.1,70,19,61.5,0.6,60.7C-17.9,59.9,-35.9,67,-47.2,61.9C-58.6,56.7,-63.4,39.5,-70,22.1C-76.6,4.7,-84.9,-12.8,-81.9,-28.1C-79,-43.3,-64.6,-56.3,-49.1,-62.5C-33.6,-68.8,-16.8,-68.3,-2.3,-65.1C12.1,-61.9,24.2,-55.9,39.5,-49.6Z"
-                ></path>
-              </svg>
-
-              <div class="z-20 flex flex-col justify-center items-center">
-                <span class="font-bold text-6xl ml-2">30+</span>
-                <p class="font-bold">happy <br /> customer</p>
-              </div>
-            </div>
-
-
-
-          </div>
-        </div>
+    <motion.section
+      className={`py-16 px-4 sm:px-6 pt-28 sm:pt-32 ${
+        darkMode ? "bg-[#232325]" : "bg-gray-50"
+      }`}
+      id="about"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={sectionVariants}
+    >
+      <div className="max-w-[1200px] mx-auto text-center">
+        <motion.h2
+          className={`text-3xl sm:text-4xl font-extrabold mb-6 ${
+            darkMode ? "text-white" : "text-gray-900"
+          }`}
+          variants={headingVariants}
+        >
+          About <span className="text-blue-500">Me</span>
+        </motion.h2>
+        <p className={`text-lg sm:text-xl ${darkMode ? "text-gray-300" : "text-gray-600"} max-w-3xl mx-auto`}>
+          I'm Subrace, a passionate Software Developer with over 3 years of experience in building scalable web applications. I specialize in backend development, web design, and creating seamless user experiences. My goal is to leverage technology to solve real-world problems while continuously learning and growing in the tech space.
+        </p>
       </div>
-    </div>
-  )
-}
+    </motion.section>
+  );
+};
 
 export default About;
