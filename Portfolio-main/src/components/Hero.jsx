@@ -193,7 +193,7 @@ const Hero = ({ darkMode }) => {
           <img
             className="w-full h-auto object-cover"
             src={profilepic}
-            alt="Subrace profile picture"
+            alt="Portrait of Subrace"
             loading="lazy"
           />
         </motion.div>
